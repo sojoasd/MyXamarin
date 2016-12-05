@@ -7,18 +7,18 @@ using Android.Content;
 
 namespace App5.Droid
 {
-    [Activity(Label = "App5", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-    {
+	[Activity(Label = "App5", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+	{
 		protected override void OnCreate(Bundle bundle)
-        {
+		{
 			base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
-			
+			global::Xamarin.Forms.Forms.Init(this, bundle);
+			LoadApplication(new App());
+
 			//啟動服務
-            StartService(new Intent(this, typeof(TimerService)));
+			StartService(new Intent(this, typeof(TimerService)));
 		}
 
 	}
